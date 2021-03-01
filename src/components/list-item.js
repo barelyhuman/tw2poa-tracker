@@ -4,7 +4,7 @@ export default function ListItem({ marked, task, id, onPress }) {
   return (
     <React.Fragment key={`id-${id}`}>
       <li onClick={() => onPress && onPress(id)}>
-        <div className="mt-3 text-gray-600 bg-white px-4 p-2 rounded-md tracking-wide cursor-pointer hover:bg-gray-100">
+        <div className="mt-3 text-gray-600 bg-gray-200 px-4 p-2 rounded-md tracking-wide cursor-pointer hover:bg-gray-300">
           <p className="flex items-center cursor-pointer">
             <span className="bg-green-100 mr-3 rounded-full text-green-600">
               {marked ? (

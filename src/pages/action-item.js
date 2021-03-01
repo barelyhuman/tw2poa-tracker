@@ -41,9 +41,9 @@ export default function ActionItem({ ...props }) {
             </>
           ) : null}
           {canRender ? (
-            <div className="bg-white p-6 rounded-md tracking-wide shadow-md">
-              <p className="text-lg text-gray-600 font-bold text-center mb-3">
-                Things to do or consider
+            <div className="p-6 rounded-lg bg-gray-50 tracking-wide shadow-md">
+              <p className="text-2xl text-gray-700 font-bold text-center mb-3">
+                Notes
               </p>
               <NotionRenderer blockMap={data} />
             </div>
