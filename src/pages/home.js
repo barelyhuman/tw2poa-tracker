@@ -7,6 +7,7 @@ import useSWR from 'swr';
 import { useHistory } from 'react-router';
 import ListItem from '../components/list-item';
 import Header from '../components/header';
+import ScreenLoader from '../components/screen-loader';
 
 export default function Home({ ...props }) {
   let history = useHistory();
@@ -17,7 +18,11 @@ export default function Home({ ...props }) {
   }
 
   if (!data) {
-    return <>Loading...</>;
+    return (
+      <>
+        <ScreenLoader/>
+      </>
+    );
   }
 
   const navigateTo = (id) => {

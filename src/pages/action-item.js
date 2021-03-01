@@ -4,6 +4,7 @@ import 'react-notion/src/styles.css';
 import { useParams } from 'react-router';
 import useSWR from 'swr';
 import Header from '../components/header';
+import ScreenLoader from '../components/screen-loader';
 import fetcher from '../lib/fetcher';
 import { getAPI } from '../lib/get-api';
 
@@ -16,7 +17,11 @@ export default function ActionItem({ ...props }) {
   }
 
   if (!data) {
-    return <>Loading...</>;
+    return (
+      <>
+        <ScreenLoader />
+      </>
+    );
   }
 
   const canRender = Object.keys(data).length > 2;
