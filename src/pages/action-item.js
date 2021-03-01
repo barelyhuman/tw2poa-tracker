@@ -3,6 +3,7 @@ import { NotionRenderer } from 'react-notion';
 import 'react-notion/src/styles.css';
 import { useParams } from 'react-router';
 import useSWR from 'swr';
+import Header from '../components/header';
 import fetcher from '../lib/fetcher';
 import { getAPI } from '../lib/get-api';
 
@@ -22,13 +23,8 @@ export default function ActionItem({ ...props }) {
 
   return (
     <>
+      <Header />
       <div className="container mx-auto py-3 max-w-screen-md">
-        <header>
-          <p className="text-4xl text-gray-600 text-center">
-            TillWhen Mark 2 - Plan of Action
-          </p>
-        </header>
-
         <div className="py-3 mx-auto flex flex-col items-center justify-center">
           <div className="py-2">
             <a
@@ -46,7 +42,9 @@ export default function ActionItem({ ...props }) {
           ) : null}
           {canRender ? (
             <div className="bg-white p-6 rounded-md tracking-wide shadow-md">
-              <p className="text-lg text-gray-600 font-bold text-center mb-3">Things to do or consider</p>
+              <p className="text-lg text-gray-600 font-bold text-center mb-3">
+                Things to do or consider
+              </p>
               <NotionRenderer blockMap={data} />
             </div>
           ) : null}
